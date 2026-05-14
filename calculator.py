@@ -35,3 +35,14 @@ class Calculator:
         self.history.push_redo(self.result)
         self.result = previous
         return "Undo realizado"
+
+
+    def redo(self):
+        next_value = self.history.pop_redo()
+
+        if next_value is None:
+            return "No hay operaciones que rehacer"
+
+        self.history.push_undo(self.result)
+        self.result = next_value
+        return "Redo realizado"
