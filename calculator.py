@@ -25,3 +25,13 @@ class Calculator:
         self.history.push_undo(previous_result)
         self.history.clear_redo()
         return "Operación realizada"
+
+    def undo(self):
+        previous = self.history.pop_undo()
+
+        if previous is None:
+            return "No hay operaciones previas"
+
+        self.history.push_redo(self.result)
+        self.result = previous
+        return "Undo realizado"
