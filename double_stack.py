@@ -18,3 +18,10 @@ class DoubleStack: #Clase de Double Stack
         if self.is_redo_empty(): #Verifica si el redo stack está vacío 
             return None #Retorna None si no hay elementos
         return self.redo_stack.pop()#Elimina y retorna el último elemento
+    
+    def clear_redo(self): #Método para limpiar el redo Stack
+        self.redo_stack.clear() #Elimina todos los elementos del redo Stack
+
+    def clear_all(self): #Método para limpiar ambos stacks
+        self.undo_stack.clear() #Vacía el undo stack
+        self.redo_stack.clear() #Vacía el redo stack 
