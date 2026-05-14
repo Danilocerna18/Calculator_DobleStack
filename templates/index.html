@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CalcStack</title>
+</head>
+<body>
+    <h1>CalcStack</h1>
+    <h2>Resultado actual: {{ data.result }}</h2>
+
+    <form action="/operate" method="POST">
+        <input type="number" step="any" name="number" required>
+
+        <select name="operator">
+            <option value="+">Sumar</option>
+            <option value="-">Restar</option>
+            <option value="*">Multiplicar</option>
+            <option value="/">Dividir</option>
+        </select>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+</body>
+</html>
