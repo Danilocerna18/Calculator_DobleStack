@@ -25,3 +25,15 @@ class DoubleStack: #Clase de Double Stack
     def clear_all(self): #Método para limpiar ambos stacks
         self.undo_stack.clear() #Vacía el undo stack
         self.redo_stack.clear() #Vacía el redo stack 
+
+    def is_undo_empty(self): #Método qque verifica si el undo stack está vacío
+        return len(self.undo_stack) == 0 #Retorna True si el tamaño es 0
+
+    def is_redo_empty(self): #Método que verifica si el redo stack está vacío
+        return len(self.redo_stack) == 0 #Retorna True si el tamaño es 0
+
+    def get_undo_stack(self): #Método para obtener el undo stack
+        return self.undo_stack #Retorna el stack completo
+
+    def get_redo_stack(self): #Método para obtener el redo stack
+        return self.redo_stack #Retorna el stack completo
