@@ -51,3 +51,10 @@ class Calculator:
         self.result = 0
         self.history.clear_all()
         return "Calculadora reiniciada"
+
+    def get_data(self):
+        return {
+            "result": self.result,
+            "undo_stack": self.history.get_undo_stack(),
+            "redo_stack": self.history.get_redo_stack()
+        }
