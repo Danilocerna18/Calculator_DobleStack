@@ -26,3 +26,11 @@ def undo():
 def redo(): 
     calculator.redo()#Ejecuta el redo
     return redirect("/")#Redirecciona a la página principal
+
+@app.route("/clear", methods=["POST"]) #Ruta para limpiar la calculadora 
+def clear(): 
+    calculator.clear() #Reinicia la calculadora
+    return redirect("/") #Redirecciona a la página principal
+
+if __name__ == "__main__": #Verifica si el archivo se está ejecutando directamente 
+    app.run(debug=True) #Inicia el servidor Flask
