@@ -50,3 +50,17 @@ def test_redo_operation():
     calc.undo()
     calc.redo()
     assert calc.result == 5
+
+def test_clear_calculator():
+    calc = Calculator()
+    calc.operate("+", 10)
+    calc.clear()
+    assert calc.result == 0
+
+
+def test_redo_clears_after_new_operation():
+    calc = Calculator()
+    calc.operate("+", 5)
+    calc.undo()
+    calc.operate("+", 3)
+    assert calc.history.get_redo_stack() == []
