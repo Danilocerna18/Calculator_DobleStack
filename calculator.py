@@ -46,3 +46,8 @@ class Calculator:
         self.history.push_undo(self.result)
         self.result = next_value
         return "Redo realizado"
+
+    def clear(self):
+        self.result = 0
+        self.history.clear_all()
+        return "Calculadora reiniciada"
