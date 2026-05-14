@@ -29,3 +29,24 @@ def test_division_operation():
     calc.operate("+", 10)
     calc.operate("/", 2)
     assert calc.result == 5
+
+
+def test_division_by_zero():
+    calc = Calculator()
+    message = calc.operate("/", 0)
+    assert message == "No se puede dividir entre cero"
+
+
+def test_undo_operation():
+    calc = Calculator()
+    calc.operate("+", 5)
+    calc.undo()
+    assert calc.result == 0
+
+
+def test_redo_operation():
+    calc = Calculator()
+    calc.operate("+", 5)
+    calc.undo()
+    calc.redo()
+    assert calc.result == 5
