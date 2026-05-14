@@ -22,3 +22,7 @@ def undo():
     calculator.undo() #Ejecuta el undo
     return redirect("/") #redirreciona a la página principal
 
+@app.route("/redo", methods = ["POST"]) #Ruta para realizar redo
+def redo(): 
+    calculator.redo()#Ejecuta el redo
+    return redirect("/")#Redirecciona a la página principal
