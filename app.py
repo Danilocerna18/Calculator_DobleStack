@@ -16,3 +16,9 @@ def operate():
     number = float(request.form["number"])#Obtiene el número ingresado y lo vuelve un float
     calculator.operate(operator, number) #Ejecuta la operación 
     return redirect("/") #Redirecciona nuevamente a la página principal
+
+@app.route("/undo", methods=["POST"]) #Ruta para realizar undo
+def undo(): 
+    calculator.undo() #Ejecuta el undo
+    return redirect("/") #redirreciona a la página principal
+
