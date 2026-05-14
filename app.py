@@ -10,3 +10,9 @@ def index():
     data = calculator.get_data() #Obtiene los datos acturales de la calculadora
     return render_template("index.html", data = data) #Renderiza el HTML y envía los datos 
 
+@app.route("/operate", methods=["POST"]) #Ruta para realizar operaciones 
+def operate(): 
+    operator = request.form ["operator"] #Obtiene el operador enviado desde el formulario
+    number = float(request.form["number"])#Obtiene el número ingresado y lo vuelve un float
+    calculator.operate(operator, number) #Ejecuta la operación 
+    return redirect("/") #Redirecciona nuevamente a la página principal
