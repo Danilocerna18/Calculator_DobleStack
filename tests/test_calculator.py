@@ -16,3 +16,16 @@ def test_subtraction_operation():
     calc = Calculator()
     calc.operate("-", 3)
     assert calc.result == -3
+
+def test_multiplication_operation():
+    calc = Calculator()
+    calc.operate("+", 5)
+    calc.operate("*", 2)
+    assert calc.result == 10
+
+
+def test_division_operation():
+    calc = Calculator()
+    calc.operate("+", 10)
+    calc.operate("/", 2)
+    assert calc.result == 5
