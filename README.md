@@ -38,7 +38,29 @@ pip install -r requirements.txt && python app.py
 pip3 install -r requirements.txt && python3 app.py
 ```
 
+## ¿Cómo ejecutar el pytest?
 
+### Windows: 
+
+```bash
+cd Calculator_DobleStack; pytest
+
+```
+
+#### si no dejo con el anterior intentar con este: 
+
+```bash
+cd Calculator_DobleStack && pytest
+```
+
+### MacOS:
+```bash
+cd Calculator_DobleStack && pytest  
+```
+#### si no dejo con el anterior intentar con este: 
+```bash
+cd Calculator_DobleStack && python3 -m pytest
+```
 
 ## Funciones principales de la calculadora:
 
